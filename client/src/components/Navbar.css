@@ -1,0 +1,39 @@
+/* Navbar.css */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #282c34;
+  color: white;
+}
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+.navbar .nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #282c34;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 1rem;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .navbar .nav-toggle {
+    display: block;
+  }
+}

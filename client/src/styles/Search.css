@@ -1,0 +1,63 @@
+/* Reset and base */
+.container {
+  width: 100%;
+  padding: 1rem;
+}
+
+/* Search form */
+.search-form {
+  display: flex;
+  margin-bottom: 1rem;
+}
+.search-form input {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+.search-form button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+/* Responsive grid cards */
+.grid-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 600px) {
+  .grid-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .grid-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Individual card */
+.card {
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  transition: box-shadow 0.2s ease;
+}
+.card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.card img {
+  width: 100%;
+  height: auto;
+}
+.card h3 {
+  margin: 0.5rem;
+  font-size: 1.1rem;
+}
+.card p {
+  margin: 0 0.5rem 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
