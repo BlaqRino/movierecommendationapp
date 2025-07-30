@@ -14,7 +14,7 @@ const MovieDetail = () => {
   const [selectedWatchlist, setSelectedWatchlist] = useState('');
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/movies/details/${id}`)
+    axios.get(`https:movierecommendationapp-jnga.onrender.com/api/movies/details/${id}`)
       .then(res => setMovie(res.data))
       .catch(err => {
         console.error('Details fetch failed:', err.message);
@@ -23,14 +23,14 @@ const MovieDetail = () => {
 
     const token = localStorage.getItem('token');
     if (token) {
-      axios.get('http://localhost:5000/api/watchlists/my', {
+      axios.get('https://movierecommendationapp-jnga.onrender.com/api/watchlists/my', {
         headers: { Authorization: `Bearer ${token}` }
       }).then(res => {
         setWatchlists(res.data);
         if (res.data.length) setSelectedWatchlist(res.data[0]._id);
       }).catch(console.error);
     }
-    axios.get(`http://localhost:5000/api/reviews/movie/${id}`)
+    axios.get(`https://movierecommendationapp-jnga.onrender.com/api/reviews/movie/${id}`)
       .then(res => setReviews(res.data))
       .catch(err => console.error('Reviews fetch error:', err.message));
   }, [id]);
@@ -42,7 +42,7 @@ const MovieDetail = () => {
 
     try {
       await axios.post(
-        `http://localhost:5000/api/reviews/${id}`,
+        `https://movierecommendationapp-jnga.onrender.com/api/reviews/${id}`,
         { rating, comment },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -66,7 +66,7 @@ const MovieDetail = () => {
 
     try {
       await axios.post(
-        `http://localhost:5000/api/watchlists/${selectedWatchlist}/add`,
+        `https://movierecommendationapp-jnga.onrender.com/api/watchlists/${selectedWatchlist}/add`,
         {
           movieId: movie.id.toString(),
           title: movie.title,

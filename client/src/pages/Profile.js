@@ -10,7 +10,7 @@ const Profile = () => {
     const token = localStorage.getItem('token');
     if (!token) return setError('Please log in.');
 
-    axios.get('http://localhost:5000/api/profile', {
+    axios.get('https://movierecommendationapp-jnga.onrender.com/api/profile', {
       headers: { Authorization: `Bearer ${token}` }
     })
     .then(res => setData(res.data))

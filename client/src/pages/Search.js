@@ -14,7 +14,7 @@ const Search = () => {
     if (!query) return;
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/movies/search?query=${encodeURIComponent(query)}`
+        `https://movierecommendationapp-jnga.onrender.com/api/movies/search?query=${encodeURIComponent(query)}`
       );
       setResults(res.data);
     } catch (err) {
